@@ -13,40 +13,16 @@ exports.sourceNodes = async ({
   )
   const dataResult = await data.json()
   dataResult.group.forEach(item => {
-    const paperLinkIds = []
-    item["external-ids"]["external-id"].forEach(externalId => {
-      const paperLinkId = createNodeId(externalId["external-id-url"].value)
-      paperLinkIds.push(paperLinkId)
-      createNode({
-        id: paperLinkId,
-        parent: null,
-        children: [],
-        url: externalId["external-id-url"].value,
-        identifier: externalId["external-id-value"],
-        internal: {
-          type: externalId["external-id-type"],
-          content: JSON.stringify(externalId),
-          contentDigest: createContentDigest(externalId),
-        }
-      })
-    })
-    const summary = item["work-summary"][0]
     createNode({
-      id: createNodeId(summary.title.title.value),
+      id: createNodeId(item['work-summary'][0].path),
       parent: null,
-      children: paperLinkIds,
-      title: summary.title.title.value,
-      date: {
-        day: summary["publication-date"].day.value,
-        month: summary["publication-date"].month.value,
-        year: summary["publication-date"].year.value,
-      },
-      summary: summary,
+      children: [],
+      ...item,
       internal: {
-        type: "Paper",
+        type: "OrcidWork",
         content: JSON.stringify(item),
         contentDigest: createContentDigest(item),
-      },
+      }
     })
   })
 
