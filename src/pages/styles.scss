@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+// If need, change your variables before importing Bulma
+$title-color: #ff0000;
+$gap: 40px;
+$desktop: 900px - (2 * $gap);
+
+@import "~bulma/bulma.sass";
+
+.mini-navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.page {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.bio {
+    width: 200px;
+}
+
+.content {
+    width: 500px;
+    flex-grow: 2;
+}

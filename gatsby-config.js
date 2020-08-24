@@ -15,5 +15,6 @@ module.exports = {
       },
     },
     "gatsby-transformer-paper",
+    "gatsby-plugin-sass",
   ],
 }
