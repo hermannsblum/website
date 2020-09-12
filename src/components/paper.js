@@ -65,8 +65,8 @@ export default function Paper({ data }) {
   })
   return (
     <div class="mb-5">
-      <div class="is-size-7 px-2 has-text-danger has-text-weight-semibold">
-        <div class="mx-2">{conference_summary}</div>
+      <div class="is-size-7 px-2 has-text-weight-semibold">
+        <span class="mx-1 paperhighlight">{conference_summary}</span>
       </div>
       <div class="px-2">
         <div class="mx-2 papertitle">{`${data.title}`}</div>

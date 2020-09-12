@@ -6,77 +6,101 @@ $tablet: 500px;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 $family-sans-serif: "Helvetica", "Helvetica Neue", "Arial", sans-serif;
-$family-secondary: "Montserrat", "Arial", sans-serif;
+$family-primary: "Vollkorn";
+$family-secondary: "Vollkorn";
+//$family-secondary: "Montserrat", "Arial", sans-serif;
 //$navbar-height: 5rem;
 
 @import "~bulma/bulma.sass";
 
 .border {
-    border-color: $grey-lighter;
+  border-color: $grey-lighter;
 }
 
 .mini-navbar {
-    display: flex;
-    justify-content: flex-end;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-bottom: 1rem;
 }
 
 .page {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
 }
 
 .bio {
-    width: 200px;
+  width: 200px;
 }
 
 .content {
-    width: 400px;
-    flex-grow: 2;
-    flex-shrink: 2;
+  width: 400px;
+  flex-grow: 2;
+  flex-shrink: 2;
 }
 
 @media (max-width: 500px) {
-    .content {
-        width: 100%;
-    }
+  .content {
+    width: 100%;
+  }
 }
 
 // not sure why this is necessary
 .content figure {
-    margin: 0;
+  margin: 0;
 }
 
 .papergrid {
-    display: grid;
-    grid-template-rows: 10px 6px auto minmax(1rem, auto) auto;
-    grid-template-columns: 10px 30px 55% auto;
+  display: grid;
+  grid-template-rows: 10px 6px auto minmax(1rem, auto) auto;
+  grid-template-columns: 10px 30px 55% auto;
 }
 
 .papertitle {
-    @extend .is-size-5;
-    @extend .has-text-weight-bold;
-    @extend .is-family-secondary;
-    line-height: 1.4rem;
-    padding: 2px 0px 6px 0px;
+  @extend .is-size-5;
+  @extend .has-text-weight-bold;
+  @extend .is-family-secondary;
+  line-height: 1.4rem;
+  padding: 2px 0px 2px 0px;
+}
+
+.paperhighlight {
+  font-weight: bolder;
+  background: linear-gradient(
+      104deg,
+      rgba(204, 255, 0, 0) 0.9%,
+      rgba(204, 255, 0, 1.25) 2.4%,
+      rgba(204, 255, 0, 0.5) 5.8%,
+      rgba(204, 255, 0, 0.1) calc(max(93%, 100% - 1rem)),
+      rgba(204, 255, 0, 0.7) calc(100% - .2rem),
+      rgba(204, 255, 0, 0) calc(100% - .1rem)
+    ),
+    linear-gradient(
+      183deg,
+      rgba(204, 255, 0, 0) 0%,
+      rgba(204, 255, 0, 0.3) 7.9%,
+      rgba(204, 255, 0, 0) 15%
+    );
+  padding: 0.1rem 5px;
+  margin: 0;
+  border-radius: 2.5px;
 }
 
 .content a {
-    color: $text;
-    text-decoration: none;
-    border-bottom: 1px solid $text;
+  color: $text;
+  text-decoration: none;
+  border-bottom: 1px solid $text;
 }
 .bio a {
-    color: $text;
-    text-decoration: none;
-    border-bottom: 1px solid $text;
+  color: $text;
+  text-decoration: none;
+  border-bottom: 1px solid $text;
 }
 
 .paperlink {
-    @extend .pb-0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  @extend .pb-0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
