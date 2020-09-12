@@ -16,5 +16,18 @@ module.exports = {
     },
     "gatsby-transformer-paper",
     "gatsby-plugin-sass",
+    {
+      resolve: "gatsby-source-google-scholar-profile",
+      options: {
+        queries: ["2Pxx8QIAAAAJ"],
+      },
+    },
+    "gatsby-transformer-yaml",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: "./src/data/",
+      },
+    },
   ],
 }

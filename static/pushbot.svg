@@ -1,0 +1,24 @@
+<svg width="30.408mm" height="28.795mm" version="1.1" viewBox="0 0 30.408 28.795">
+<g transform="translate(-96.639 -113.37)">
+<path transform="matrix(-1.6481 1.2059 1.1237 1.413 173.5 -190.64)" d="m119.72 117.25 1.0354-2.1571 1.0354-2.1571 1.3504 1.9752 1.3504 1.9752-2.3858 0.18187z"/>
+<g transform="matrix(-1 0 0 1 223.98 0)">
+<circle cx="104.18" cy="137.17" r="5"/>
+<circle cx="104.18" cy="137.17" r="4" fill="#fff"/>
+</g>
+<g transform="matrix(-1 0 0 1 205.82 0)">
+<circle cx="104.18" cy="137.17" r="5" opacity=".97"/>
+<circle cx="104.18" cy="137.17" r="4" fill="#fff"/>
+</g>
+<rect transform="scale(-1,1)" x="-119.83" y="132.14" width="18.292" height="9.8605" fill="#fff"/>
+<rect transform="scale(-1,1)" x="-119.85" y="132.17" width="18.31" height=".95"/>
+<g transform="matrix(-1 0 0 1 223.69 0)">
+<path d="m106.51 132.28c-0.15182-6.7136-3.124-13.665-7.2916-18.745" fill="none" stroke="#000" stroke-width=".5"/>
+<path transform="matrix(1.3774 -.078338 .072931 1.2824 -50.294 -30.324)" d="m104.04 121.84-3.8158-4e-3 1.9114-3.3026 0.9522 1.6533z"/>
+<path d="m99.087 113.72 2.6495 3.9466" fill="none" stroke="#000" stroke-width=".27406px"/>
+</g>
+<circle transform="scale(-1,1)" cx="-119.8" cy="137.17" r="3" fill="#b3b3b3"/>
+<rect transform="scale(-1,1)" x="-112.51" y="114.94" width="9.4663" height="17.327"/>
+<rect transform="scale(-1,1)" x="-119.85" y="141.21" width="18.31" height=".96"/>
+<circle transform="scale(-1,1)" cx="-101.64" cy="137.17" r="3" fill="#b3b3b3"/>
+</g>
+</svg>
