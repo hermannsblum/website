@@ -45,6 +45,9 @@ $family-secondary: "Vollkorn";
   .content {
     width: 100%;
   }
+  .bio {
+    width: 100%;
+  }
 }
 
 // not sure why this is necessary
@@ -97,6 +100,12 @@ $family-secondary: "Vollkorn";
   color: $text;
   text-decoration: none;
   border-bottom: 1px solid $text;
+}
+
+// alignment of text and icons did not work without this
+.icontext {
+  line-height: 1.5rem;
+  vertical-align: bottom;
 }
 
 .paperlink {

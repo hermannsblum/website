@@ -27,31 +27,27 @@ export default function Layout({ children }) {
             Hi, I'm Hermann, PhD Student at the Autonomous Systems Lab of ETH
             Z&uuml;rich.
           </p>
-          <p>
+          <p class="mt-2">
             My research focuses on robotic perception. I strive to build robots
             that can understand their environment semantically and
             geometrically, in order to perform manipulation and other safety
             critical tasks in proximity to humans.
           </p>
-          <p>
+          <p class="mt-2">
             <span
               class="icon pr-2"
               dangerouslySetInnerHTML={{ __html: icons.github }}
             ></span>
-            hermannsblum
+            <span class="icontext">hermannsblum</span>
           </p>
           <p>
             <span
               class="icon pr-2"
               dangerouslySetInnerHTML={{ __html: icons.linkedin }}
             ></span>
-            hermannsblum
+            <span class="icontext">hermannsblum</span>
           </p>
-          <p>
-            <span
-              class="icon pr-2"
-              dangerouslySetInnerHTML={{ __html: icons.globe }}
-            ></span>
+          <p class="mt-2">
             Visit the <a href="https://asl.ethz.ch">ASL website</a> for latest
             updates from my colleagues and supervisors
           </p>
