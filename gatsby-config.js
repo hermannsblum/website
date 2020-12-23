@@ -8,12 +8,6 @@ module.exports = {
   /* Your site config here */
   plugins: [
     "gatsby-source-orcid",
-    {
-      resolve: `gatsby-source-google-scholar`,
-      options: {
-        queries: [`hermann blum`],
-      },
-    },
     "gatsby-transformer-paper",
     "gatsby-plugin-sass",
     {

@@ -21,10 +21,7 @@ async function onCreateNode({
   if (node.internal.type === "GoogleScholarProfile") {
     const paperId = createNodeId(node.title.toLowerCase().trim())
     let paperNode = getNode(paperId)
-    if (!paperNode || paperNode.creator === "google-scholar") {
-      // we always write over the scholar entry, but we save the children
-      let existingChildren = paperNode ? paperNode.children : []
-      existingChildren = existingChildren.map(childId => getNode(childId))
+    if (!paperNode) {
       // some processing for axiv
       let journal = node.journal
       let arxiv = null
@@ -50,78 +47,12 @@ async function onCreateNode({
         },
       }
       createNode(paperNode)
-      existingChildren.forEach(child => {
-        delete child.internal.owner
-        createNode(child)
-        createParentChildLink({ parent: paperNode, child: child})
-      })
-      if (arxiv && existingChildren.filter(child => child.internal.type === "arxiv").length === 0) {
-        const paperLink = {
-          id: createNodeId(arxiv),
-          url: `https://arxiv.org/abs/${arxiv}`,
-          internal: {
-            type: "arxiv",
-            content: JSON.stringify(arxiv),
-            contentDigest: createContentDigest(arxiv),
-          }
-        }
-        createNode(paperLink)
-        createParentChildLink({ parent: paperNode, child: paperLink })
-      }
     }
     // overwrite authors in any case
     paperNode = getNode(paperId)
     delete paperNode.internal.owner
     paperNode.authors = node.authors
     createNode(paperNode)
-  } else if (node.internal.type === "GoogleScholar") {
-    // check if paper contains correct author
-    if (
-      !node.authors.find(
-        author => author.url && author.url.includes("user=2Pxx8QIAAAAJ")
-      )
-    ) {
-      return
-    }
-    const paperId = createNodeId(node.title.toLowerCase().trim())
-    let paperNode = getNode(paperId)
-    if (!paperNode) {
-      // avoid overwriting
-      paperNode = {
-        id: paperId,
-        title: node.title,
-        creator: "google-scholar",
-        date: {
-          year: parseInt(node.year),
-          month: 13,
-        },
-        internal: {
-          type: "Paper",
-          content: JSON.stringify(node),
-          contentDigest: createContentDigest(node),
-        },
-      }
-      createNode(paperNode)
-    }
-    paperNode = getNode(paperId)
-    const url = cleanUrl(node.url)
-    const paperLink = {
-      id: createNodeId(url),
-      url: url,
-      internal: {
-        type: "uri",
-        content: JSON.stringify(node.url),
-        contentDigest: createContentDigest(node.url),
-      },
-    }
-    if (node.url.includes("arxiv.org")) {
-      paperLink.internal.type = "arxiv"
-    }
-    createNode(paperLink)
-    createParentChildLink({
-      parent: paperNode,
-      child: paperLink,
-    })
   } else if (node.internal.type === "OrcidWork") {
     const summary = node["work-summary"][0]
     const paperId = createNodeId(summary.title.title.value.toLowerCase().trim())

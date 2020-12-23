@@ -5477,14 +5477,6 @@ gatsby-source-filesystem@^2.3.26:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-source-google-scholar@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/gatsby-source-google-scholar/-/gatsby-source-google-scholar-1.1.4.tgz#206e1a295fcfb9cd0c924e4b791c541485e36d59"
-  integrity sha512-vAsxyjNNW4PShGfd2FOmyEsu1zBr2IOalyzYiqScVg/CKpGJo9v5qmJtWm1qWZboZSGsi1t6yswvb1F4ADzT5Q==
-  dependencies:
-    cheerio "^1.0.0-rc.2"
-    request "^2.88.0"
-
 gatsby-telemetry@^1.7.1:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.7.1.tgz#8e05dc2b386218f7eb29f8d597fcec19dc96b659"
