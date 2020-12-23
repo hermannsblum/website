@@ -6,5 +6,6 @@ RUN yarn
 RUN gatsby telemetry --disable
 RUN gatsby build
 
-FROM gatsbyjs/gatsby
-COPY --from=build /app/public /pub
+FROM abiosoft/caddy:1.0.3-no-stats
+RUN echo 'tls off' >> /etc/Caddyfile
+COPY --from=build /app/public /srv
