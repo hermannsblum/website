@@ -20,7 +20,6 @@ export default function Layout({ children }) {
               dangerouslySetInnerHTML={{ __html: icons.pushbot }}
             ></span>
             <a className="navbar-item">Home</a>
-            <a className="navbar-item">Research</a>
           </nav>
         </div>
       </div>
