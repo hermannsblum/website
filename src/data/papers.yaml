@@ -1,3 +1,14 @@
 - title: Active Learning for UAV-based Semantic Mapping
 - title: "The Fishyscapes Benchmark: Measuring Blind Spots in Semantic Segmentation"
   media: /fs_teaser.jpg
+  comment: presented at ICCV 2019 Workshop on Autonomous Driving
+- title: Quantifying Aleatoric and Epistemic Uncertainty Using Density Estimation in Latent Space
+  comment: poster at the NeurIPS 2020 Bayesian Deep Learning workshop
+- title: "Online Synchronization of Building Model for On-Site Mobile Robotic Construction"
+  journal: ISARC 2020
+- title: "This is not what I imagined: Error Detection for Semantic Segmentation through Visual Dissimilarity"
+  ignore: true
+- title: A neuromorphic controller for a robotic vehicle equipped with a dynamic vision sensor
+  journal: RSS 2017
+- title: Fast and Accurate Mapping for Autonomous Racing
+  ignore: true
