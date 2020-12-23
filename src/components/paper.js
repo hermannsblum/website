@@ -11,7 +11,10 @@ export default function Paper({ data }) {
   let conference_summary = `${data.date.year}`
   // search for conference abbreviation
   if (data.journal) {
-    if (data.journal.includes("IROS")) {
+    if (
+      data.journal.includes("IROS") ||
+      data.journal.includes("International Conference on Intelligent Robots")
+    ) {
       conference_summary = `IROS ${data.date.year}`
     } else if (data.journal.includes(`${data.date.year}`)) {
       conference_summary = data.journal
@@ -24,7 +27,7 @@ export default function Paper({ data }) {
   if (data.media) {
     media_content = (
       <figure class="image is-16by9">
-        <img src={data.media} class="mx-2"></img>
+        <img src={data.media}></img>
       </figure>
     )
   }
@@ -37,7 +40,7 @@ export default function Paper({ data }) {
       media_content = (
         <figure class="image is-16by9">
           <iframe
-            class="has-ratio mx-2"
+            class="has-ratio"
             width="360"
             height="180"
             src={`https://www.youtube-nocookie.com/embed/${youtube_parser(
@@ -53,49 +56,69 @@ export default function Paper({ data }) {
       const {
         internal: { type },
       } = link
-      links.push((
-        <>
-          <div class="mx-2" style={{fontSize: "0.6rem", lineHeight: "0.4rem"}}>{type}</div>
-          <a href={link.url} class="mx-2">
-            {`${type === "uri" ? link.url.slice(8, link.url.length) : link.url.split("/").pop()}`}
+      links.push(
+        <div class="paperlink">
+          <a href={link.url}>
+            {`${type === "uri" ? link.url.slice(8, link.url.length) : type}`}
           </a>
-        </>
-      ))
+        </div>
+      )
     }
   })
-  return (
-    <div class="mb-5">
-      <div class="is-size-7 px-2 has-text-weight-semibold">
-        <span class="mx-1 paperhighlight">{conference_summary}</span>
+
+  const paperinfo = (
+    <>
+      <div class="papertitle">{`${data.title}`}</div>
+      {data.authors ? <div class="is-size-7">{data.authors}</div> : ""}
+      <div class="is-size-7" style={{ overflow: "hidden" }}>
+        <div class="paperhighlight">{conference_summary}</div>
+        {links.map(link => (
+          <>{link}</>
+        ))}
       </div>
-      <div class="px-2">
-        <div class="mx-2 papertitle">{`${data.title}`}</div>
-        {data.authors ? <div class="mx-2 is-size-7">{data.authors}</div> : ""}
+    </>
+  )
+  return (
+    <div class={"columns is-multiline" + (media_content ? " highlighted" : "")}>
+      <div
+        class={
+          (media_content
+            ? "pb-0 is-8 is-offset-2 is-hidden-widescreen"
+            : "is-2 is-offset-1") +
+          " papercomment column is-hidden-mobile"
+        }
+        style={{ textAlign: "right" }}
+      >
+        {`${data.comment || ""}`}
       </div>
       {media_content ? (
-        <div class="columns is-mobile" style={{ margin: 0 }}>
-          <div class="px-2 column is-half pt-1">{media_content}</div>
-          <div class="column is-half pt-1">
-            <div class="columns is-multiline is-mobile is-size-7">
-              {links.map(link => (
-                <div class="column is-half-desktop is-full-mobile px-2 paperlink">
-                  {link}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <div class="column is-2 is-hidden-widescreen is-hidden-mobile"></div>
       ) : (
-        <div class="column pt-1">
-          <div class="columns is-multiline is-mobile is-size-7">
-            {links.map(link => (
-              <div class="column is-one-quarter-desktop is-half-mobile px-2 paperlink">
-                {link}
-              </div>
-            ))}
-          </div>
-        </div>
+        ""
       )}
+      <div
+        class={"column is-full-mobile" + (media_content ? " is-offset-2" : "")}
+      >
+        {data.comment ? (
+          <div
+            class={
+              "papercomment" +
+              (media_content
+                ? " is-hidden-tablet-only is-hidden-desktop-only"
+                : " is-hidden-tablet")
+            }
+          >
+            {data.comment}
+          </div>
+        ) : (
+          ""
+        )}
+        {paperinfo}
+      </div>
+      {media_content ? <div class="media-content column">{media_content}</div> : ""}
+      <div
+        class={"column is-hidden-mobile" + (media_content ? " is-2" : " is-3")}
+      ></div>
     </div>
   )
 }

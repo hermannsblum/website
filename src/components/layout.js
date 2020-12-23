@@ -4,28 +4,31 @@ import icons from "./icons"
 export default function Layout({ children }) {
   return (
     <>
-      <nav
-        className="mini-navbar container is-desktop border"
-        role="navigation"
-        ariaLabel="main navigation"
-      >
-        <span
-          class="pl-1 pt-2"
-          style={{
-            height: "3rem",
-            marginRight: "auto",
-          }}
-          dangerouslySetInnerHTML={{ __html: icons.pushbot }}
-        ></span>
-        <a className="navbar-item">Home</a>
-        <a className="navbar-item">Research</a>
-      </nav>
-      <div className="page container is-desktop px-1">
-        <div class="content">{children}</div>
-        <div class="bio is-size-7">
+      <div class="columns">
+        <div class="column is-6 is-offset-3 is-desktop">
+          <nav
+            className="mini-navbar border"
+            role="navigation"
+            ariaLabel="main navigation"
+          >
+            <span
+              class="pl-1 pt-2"
+              style={{
+                height: "3rem",
+                marginRight: "auto",
+              }}
+              dangerouslySetInnerHTML={{ __html: icons.pushbot }}
+            ></span>
+            <a className="navbar-item">Home</a>
+            <a className="navbar-item">Research</a>
+          </nav>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-6 is-offset-3 is-size-7">
           <p>
-            Hi, I'm Hermann, PhD Student at the Autonomous Systems Lab of ETH
-            Z&uuml;rich.
+            Hi, I'm Hermann. I work as a PhD Student at the Autonomous Systems
+            Lab of ETH Z&uuml;rich.
           </p>
           <p class="mt-2">
             My research focuses on robotic perception. I strive to build robots
@@ -53,6 +56,7 @@ export default function Layout({ children }) {
           </p>
         </div>
       </div>
+      {children}
     </>
   )
 }

@@ -6,7 +6,7 @@ import "./styles.scss"
 
 export const query = graphql`
   query PaperQuery {
-    allPaper(sort: { fields: date___year, order: DESC }) {
+    allPaper(sort: { fields: [date___year, date___month], order: [DESC, DESC] }) {
       nodes {
         children {
           internal {
@@ -27,6 +27,7 @@ export const query = graphql`
         authors
         date {
           year
+          month
         }
       }
     }
@@ -34,6 +35,9 @@ export const query = graphql`
       nodes {
         title
         media
+        comment
+        journal
+        ignore
       }
     }
   }
@@ -41,17 +45,25 @@ export const query = graphql`
 
 const WorkPage = ({ data }) => {
   // overwrite paper data with any info from yaml
-  const paperData = data.allPaper.nodes.map(paper => {
-    const correspondingYamlPaper = data.allPapersYaml.nodes.find(yamlPaper => yamlPaper.title === paper.title)
+  const paperData = data.allPaper.nodes.reduce((result, paper) => {
+    const correspondingYamlPaper = data.allPapersYaml.nodes.find(
+      yamlPaper => yamlPaper.title === paper.title
+    )
     if (correspondingYamlPaper) {
-      return {
-        ...paper,
-        authors: correspondingYamlPaper.authors || paper.authors,
-        media: correspondingYamlPaper.media || paper.media,
+      if (!correspondingYamlPaper.ignore) {
+        result.push({
+          ...paper,
+          authors: correspondingYamlPaper.authors || paper.authors,
+          media: correspondingYamlPaper.media || paper.media,
+          journal: correspondingYamlPaper.journal || paper.journal,
+          comment: correspondingYamlPaper.comment,
+        })
       }
+    } else {
+      result.push(paper)
     }
-    return paper
-  })
+    return result
+  }, [])
   return (
     <Layout>
       {paperData.map(paper => (
