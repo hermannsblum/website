@@ -3,6 +3,7 @@ RUN yarn global add gatsby-cli
 WORKDIR /app
 ADD . ./
 RUN yarn
+RUN gatsby telemetry --disable
 RUN gatsby build
 
 FROM gatsbyjs/gatsby
