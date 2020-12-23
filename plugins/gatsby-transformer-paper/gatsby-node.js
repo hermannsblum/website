@@ -40,7 +40,8 @@ async function onCreateNode({
         journal: journal,
         date: {
           year: parseInt(node.year),
-          month: 13,
+          // parse month from arxiv if possible
+          month: arxiv ? parseInt(arxiv.slice(2, 4)) : 13,
         },
         internal: {
           type: "Paper",
@@ -54,7 +55,7 @@ async function onCreateNode({
         createNode(child)
         createParentChildLink({ parent: paperNode, child: child})
       })
-      if (arxiv) {
+      if (arxiv && existingChildren.filter(child => child.internal.type === "arxiv").length === 0) {
         const paperLink = {
           id: createNodeId(arxiv),
           url: `https://arxiv.org/abs/${arxiv}`,
@@ -100,18 +101,6 @@ async function onCreateNode({
           contentDigest: createContentDigest(node),
         },
       }
-      createNode(paperNode)
-    }
-    if (!paperNode.authors) {
-      let authors = node.authors
-        .map(author => he.decode(author.name))
-        .join(", ")
-      if (node.postEtAl) {
-        authors = authors + " et al."
-      }
-      paperNode = getNode(paperId)
-      delete paperNode.internal.owner
-      paperNode.authors = authors
       createNode(paperNode)
     }
     paperNode = getNode(paperId)
