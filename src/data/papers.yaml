@@ -1,9 +1,11 @@
 - title: Active Learning for UAV-based Semantic Mapping
 - title: "The Fishyscapes Benchmark: Measuring Blind Spots in Semantic Segmentation"
   media: /fs_teaser.jpg
-  comment: presented at ICCV 2019 Workshop on Autonomous Driving
+  authors: H Blum*, PE Sarlin*, J Nieto, R Siegwart, C Cadena
 - title: Quantifying Aleatoric and Epistemic Uncertainty Using Density Estimation in Latent Space
-  comment: poster at the NeurIPS 2020 Bayesian Deep Learning workshop
+  comment: new follow-up on density-based uncertainties, poster at the NeurIPS 2020 Bayesian Deep Learning workshop
+  authors: J Postels*, H Blum*, C Cadena, R Siegwart, L Van Gool, F Tombari
+  media: /density_regression.png
 - title: "Online Synchronization of Building Model for On-Site Mobile Robotic Construction"
   journal: ISARC 2020
 - title: "This is not what I imagined: Error Detection for Semantic Segmentation through Visual Dissimilarity"
@@ -12,3 +14,8 @@
   journal: RSS 2017
 - title: Fast and Accurate Mapping for Autonomous Racing
   ignore: true
+- title: A Fully-Integrated Sensing and Control System for High-Accuracy Mobile Robotic Building Construction
+  authors: A Gawel, H Blum, J Pankert, K Krämer, L Bartolomei, S Ercan, F Farshidian, M Chli, F Gramazio, R Siegwart, M Hutter, T Sandy
+  comment: first mayor work of our interdisciplinary construction-robotics team
+- title: Accurate Mapping and Planning for Autonomous Racing
+  authors: L Andresen*, A Brandemuehl*, A Hönger*, B Kuan*, N Vödisch*, H Blum, V Reijgwart, L Bernreiter, L Schaupp, J J Chung, M Bürki, M R Oswald, R Siegwart, A Gawel
