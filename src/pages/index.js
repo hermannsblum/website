@@ -3,8 +3,6 @@ import Layout from "../components/layout"
 import Paper from "../components/paper"
 import { graphql } from "gatsby"
 import "./styles.scss"
-import "../../static/Vollkorn-Regular.ttf"
-import "../../static/ReenieBeanie-Regular.ttf"
 
 export const query = graphql`
   query PaperQuery {
