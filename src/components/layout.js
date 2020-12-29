@@ -1,9 +1,20 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import icons from "./icons"
 
 export default function Layout({ children }) {
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Hermann Blum</title>
+        <link
+          rel="icon"
+          sizes="any"
+          type="image/svg+xml"
+          href="/favicon.svg"
+        />
+      </Helmet>
       <div class="columns">
         <div class="column is-6 is-offset-3 is-desktop">
           <nav

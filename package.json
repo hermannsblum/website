@@ -17,6 +17,7 @@
     "bulma": "^0.9.0",
     "cheerio": "^1.0.0-rc.5",
     "gatsby": "^2.24.47",
+    "gatsby-plugin-react-helmet": "^3.7.0",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.26",
@@ -25,7 +26,8 @@
     "iconv-lite": "^0.6.2",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "prettier": "2.0.5"
