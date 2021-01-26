@@ -14,6 +14,8 @@ export default function Layout({ children }) {
           type="image/svg+xml"
           href="/favicon.svg"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
       </Helmet>
       <div class="columns">
         <div class="column is-6 is-offset-3 is-desktop">
