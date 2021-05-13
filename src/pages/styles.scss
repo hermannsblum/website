@@ -16,7 +16,7 @@
 
 // If need, change your variables before importing Bulma
 $desktop: 800px;
-$tablet: 400px;
+$tablet: 600px;
 $widescreen: 1100px;
 //$widescreen-enabled: true;
 $fullhd-enabled: false;
@@ -103,4 +103,16 @@ a {
   font-family: "Reenie Beanie";
   display: flex;
   align-items: center;
+}
+
+.decoration {
+  position: absolute;
+  outline: none;
+  display: block;
+}
+@media (max-width: $desktop) {
+  .decoration {
+    visibility: hidden;
+    display: none;
+  }
 }
