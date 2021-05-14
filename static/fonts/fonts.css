@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Vollkorn';
-  src: url('Vollkorn-Regular.ttf');
+  src: url('Vollkorn-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Nanum Pen';
-  src: url('NanumPenScript-Regular.ttf');
+  src: url('NanumPenScript-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
