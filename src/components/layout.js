@@ -69,7 +69,13 @@ export default function Layout({ children }) {
         >
           <img src="/robo1.svg" alt=""></img>
         </div>
-        <div class="column is-2-tablet is-offset-3-tablet is-3-mobile">
+        <div 
+	  class="column is-2-tablet is-offset-3-tablet is-3-mobile"
+	  style={{
+            'max-height': '10rem',
+	    overflow: 'hidden',
+          }}
+	>
           <img src="/profile.svg" alt="profile picture"></img>
         </div>
         <div class="column is-4-tablet is-9-mobile is-size-7">
