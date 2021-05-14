@@ -32,7 +32,7 @@ export default function Layout({ children }) {
           </nav>
         </div>
       </div>
-      <div class="columns">
+      <div class="columns is-mobile">
         <div
           class="decoration"
           style={{
@@ -69,10 +69,10 @@ export default function Layout({ children }) {
         >
           <img src="/robo1.svg" alt=""></img>
         </div>
-        <div class="column is-2 is-offset-3">
+        <div class="column is-2-tablet is-offset-3-tablet is-3-mobile">
           <img src="/profile.svg" alt="profile picture"></img>
         </div>
-        <div class="column is-4 is-size-7">
+        <div class="column is-4-tablet is-9-mobile is-size-7">
           <p>
             Hi, I'm Hermann. I work as a PhD Student at the Autonomous Systems
             Lab of ETH Z&uuml;rich.
