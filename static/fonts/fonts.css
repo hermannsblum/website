@@ -7,7 +7,9 @@
 
 @font-face {
   font-family: 'Nanum Pen';
-  src: url('NanumPenScript-Regular.ttf') format('truetype');
+  src: url('nanumpenscript-regular.woff2') format('woff2'),
+       url('nanumpenscript-regular.woff') format('woff'),
+       url('nanumpenscript-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
