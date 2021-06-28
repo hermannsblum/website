@@ -27,7 +27,7 @@ export default function Paper({ data }) {
   if (data.media) {
     media_content = (
       <figure className="image is-16by9">
-        <img src={data.media}></img>
+        <img src={data.media} loading="lazy" alt="paper figure"></img>
       </figure>
     )
   }

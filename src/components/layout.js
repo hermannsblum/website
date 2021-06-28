@@ -43,7 +43,7 @@ export default function Layout({ children }) {
             transform: "rotate(-11deg)",
           }}
         >
-          <img src="/robo3.svg" alt=""></img>
+          <img src="/robo3.svg" alt="" loading="lazy"></img>
         </div>
         <div
           className="decoration"
@@ -55,7 +55,7 @@ export default function Layout({ children }) {
             //transform: "rotate(7deg)",
           }}
         >
-          <img src="/robo2.svg" alt=""></img>
+          <img src="/robo2.svg" alt="" loading="lazy"></img>
         </div>
         <div
           className="decoration"
@@ -67,7 +67,7 @@ export default function Layout({ children }) {
             transform: "rotate(7deg)",
           }}
         >
-          <img src="/robo1.svg" alt=""></img>
+          <img src="/robo1.svg" alt="" loading="lazy"></img>
         </div>
         <div
           className="column is-2-tablet is-offset-3-tablet is-3-mobile"
