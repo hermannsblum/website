@@ -26,7 +26,7 @@ export default function Paper({ data }) {
   let links = []
   if (data.media) {
     media_content = (
-      <figure class="image is-16by9">
+      <figure className="image is-16by9">
         <img src={data.media}></img>
       </figure>
     )
@@ -38,17 +38,17 @@ export default function Paper({ data }) {
       (link.url.includes("youtube") || link.url.includes("youtu.be"))
     ) {
       media_content = (
-        <figure class="image is-16by9">
+        <figure className="image is-16by9">
           <iframe
-            class="has-ratio"
+            className="has-ratio"
             width="360"
             height="180"
             src={`https://www.youtube-nocookie.com/embed/${youtube_parser(
               link.url
             )}`}
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </figure>
       )
@@ -57,9 +57,9 @@ export default function Paper({ data }) {
         internal: { type },
       } = link
       links.push(
-        <div class="paperlink">
+        <div className="paperlink">
           <a href={link.url}>
-            {`${type === "uri" ? link.url.slice(8, link.url.length) : type}`}
+              {`${type === "uri" ? link.url.slice(8, 60) : type}`}
           </a>
         </div>
       )
@@ -68,10 +68,10 @@ export default function Paper({ data }) {
 
   const paperinfo = (
     <>
-      <div class="papertitle">{`${data.title}`}</div>
-      {data.authors ? <div class="is-size-7">{data.authors}</div> : ""}
-      <div class="is-size-7" style={{ overflow: "hidden" }}>
-        <div class="paperhighlight">{conference_summary}</div>
+      <div className="papertitle">{`${data.title}`}</div>
+      {data.authors ? <div className="is-size-7">{data.authors}</div> : ""}
+      <div className="is-size-7" style={{ overflow: "hidden" }}>
+        <div className="paperhighlight">{conference_summary}</div>
         {links.map(link => (
           <>{link}</>
         ))}
@@ -79,9 +79,9 @@ export default function Paper({ data }) {
     </>
   )
   return (
-    <div class={"columns is-multiline" + (media_content ? " highlighted" : "")}>
+    <div className={"columns is-multiline" + (media_content ? " highlighted" : "")}>
       <div
-        class={
+        className={
           (media_content
             ? "pb-0 is-8 is-offset-2 is-hidden-widescreen"
             : "is-2 is-offset-1") +
@@ -92,16 +92,16 @@ export default function Paper({ data }) {
         {`${data.comment || ""}`}
       </div>
       {media_content ? (
-        <div class="column is-2 is-hidden-widescreen is-hidden-mobile"></div>
+        <div className="column is-2 is-hidden-widescreen is-hidden-mobile"></div>
       ) : (
         ""
       )}
       <div
-        class={"column is-full-mobile" + (media_content ? " is-offset-2" : "")}
+        className={"column is-full-mobile" + (media_content ? " is-offset-2" : "")}
       >
         {data.comment ? (
           <div
-            class={
+            className={
               "papercomment" +
               (media_content
                 ? " is-hidden-tablet-only is-hidden-desktop-only"
@@ -115,9 +115,9 @@ export default function Paper({ data }) {
         )}
         {paperinfo}
       </div>
-      {media_content ? <div class="media-content column">{media_content}</div> : ""}
+      {media_content ? <div className="media-content column">{media_content}</div> : ""}
       <div
-        class={"column is-hidden-mobile" + (media_content ? " is-2" : " is-3")}
+        className={"column is-hidden-mobile" + (media_content ? " is-2" : " is-3")}
       ></div>
     </div>
   )

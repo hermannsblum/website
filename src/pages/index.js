@@ -8,6 +8,7 @@ export const query = graphql`
   query PaperQuery {
     allPaper(sort: { fields: [date___year, date___month], order: [DESC, DESC] }) {
       nodes {
+        id
         children {
           internal {
             type
@@ -68,7 +69,7 @@ const WorkPage = ({ data }) => {
   return (
     <Layout>
       {paperData.map(paper => (
-        <Paper data={paper}></Paper>
+        <Paper data={paper} key={paper.id}></Paper>
       ))}
     </Layout>
   )
