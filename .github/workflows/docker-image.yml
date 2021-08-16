@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    - cron:  '0 2 * * *'
+  #  - cron:  '0 2 * * *'
 jobs:
   push_to_registry:
     name: Push Docker image to GitHub Packages
