@@ -26,6 +26,13 @@ export default function Layout({ children }) {
               }}
               dangerouslySetInnerHTML={{ __html: icons.pushbot }}
             ></span>
+            <a
+              className="navbar-item"
+              href="https://boardgames.hermannblum.net/"
+              target="_blank"
+            >
+              Boardgames
+            </a>
             <a className="navbar-item" href="/">
               Home
             </a>
@@ -76,7 +83,7 @@ export default function Layout({ children }) {
             overflow: "hidden",
           }}
         >
-          <img src="/profile.svg" alt="profile picture"></img>
+          <img src="/profile.png" alt="profile picture"></img>
         </div>
         <div className="column is-4-tablet is-9-mobile is-size-7">
           <p>
@@ -98,14 +105,26 @@ export default function Layout({ children }) {
               className="icon pr-2"
               dangerouslySetInnerHTML={{ __html: icons.github }}
             ></span>
-            <span className="icontext">hermannsblum</span>
+            <a
+              className="icontext"
+              href="https://github.com/hermannsblum"
+              target="_blank"
+            >
+              hermannsblum
+            </a>
           </p>
           <p>
             <span
               className="icon pr-2"
               dangerouslySetInnerHTML={{ __html: icons.linkedin }}
             ></span>
-            <span className="icontext">hermannsblum</span>
+            <a
+              className="icontext"
+              href="https://www.linkedin.com/in/hermann-bl/"
+              target="_blank"
+            >
+              hermannsblum
+            </a>
           </p>
           <p className="mt-2">
             Visit the <a href="https://asl.ethz.ch">ASL website</a> for latest
