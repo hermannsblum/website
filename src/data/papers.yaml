@@ -22,4 +22,9 @@
 - title: Pixel-wise Anomaly Detection in Complex Driving Scenes
   journal: CVPR 2021
   authors: G Di Biase*, H Blum*, R Siegwart, C Cadena
-
+- title: Self-Improving Semantic Perception for Indoor Localisation
+  comment: Our new concept for robots that learn on their own
+- title: Continual Learning of Semantic Segmentation using Complementary 2D-3D Data Representations
+  comment: 🏆 Best Paper Runner-up at the 2021 NeurIPS Robot Learning Workshop
+- title: "SegmentMeIfYouCan: A Benchmark for Anomaly Segmentation"
+  authors: R Chan*, K Lis*, S Uhlemeyer*, H Blum*, S Honari, R Siegwart, P Fua, M Salzmann, M Rottmann
