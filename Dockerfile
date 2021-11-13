@@ -2,7 +2,7 @@ FROM node:12-buster as build
 RUN yarn global add gatsby-cli
 WORKDIR /app
 ADD . ./
-RUN yarn
+RUN yarn install
 RUN gatsby telemetry --disable
 RUN gatsby build
 
