@@ -21,18 +21,19 @@ async function onCreateNode({
   if (node.internal.type === "GoogleScholarProfile") {
     const paperId = createNodeId(node.title.toLowerCase().trim())
     let paperNode = getNode(paperId)
+    // some processing for axiv
+    let journal = node.journal
+    let arxiv = null
+    if (journal.includes("arXiv")) {
+      journal = null
+      const cutPosition = node.journal.indexOf("arXiv:") + 6
+      arxiv = node.journal.slice(cutPosition, cutPosition + 10)
+    }
     if (!paperNode || paperNode.creator === "google-scholar") {
       // we always write over the scholar entry, but we save the children
       let existingChildren = paperNode ? paperNode.children : []
       existingChildren = existingChildren.map(childId => getNode(childId))
-      // some processing for axiv
-      let journal = node.journal
-      let arxiv = null
-      if (journal.includes("arXiv")) {
-        journal = null
-        const cutPosition = node.journal.indexOf("arXiv:") + 6
-        arxiv = node.journal.slice(cutPosition, cutPosition + 10)
-      }
+
       paperNode = {
         id: paperId,
         title: node.title,
@@ -72,6 +73,10 @@ async function onCreateNode({
         createNode(paperLink)
         createParentChildLink({ parent: paperNode, child: paperLink })
       }
+    } else if (paperNode && !paperNode.journal) {
+      paperNode.journal = journal
+      delete paperNode.internal.owner
+      createNode(paperNode)
     }
     // overwrite authors in any case
     paperNode = getNode(paperId)
@@ -132,11 +137,13 @@ async function onCreateNode({
     let paperNode = getNode(paperId)
     // we always write over the scholar entry, but we save the children
     let existingChildren = paperNode ? paperNode.children : []
+    // existing journal in case orcid does not have one
+    let existingJournal = paperNode ? paperNode.journal : null;
     existingChildren = existingChildren.map(childId => getNode(childId))
     createNode({
       id: paperId,
       title: summary.title.title.value,
-      journal: node["journal-title"] ? node["journal-title"].value : null,
+      journal: node["journal-title"] ? node["journal-title"].value : existingJournal,
       creator: "orcid",
       date: {
         month: parseInt(summary["publication-date"].month.value),
