@@ -1,4 +1,5 @@
 import React from "react"
+import ReactPlayer from "react-player/youtube"
 
 function youtube_parser(url) {
   var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/
@@ -41,17 +42,14 @@ export default function Paper({ data }) {
     ) {
       media_content = (
         <figure className="image is-16by9">
-          <iframe
-            className="has-ratio"
-            width="360"
-            height="180"
-            src={`https://www.youtube-nocookie.com/embed/${youtube_parser(
-              link.url
-            )}`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <ReactPlayer
+            url={link.url}
+            light={true}
+            controls={true}
+            width="100%"
+            height="100%"
+            className="react-player"
+          />
         </figure>
       )
     } else if (link.url) {
@@ -59,7 +57,7 @@ export default function Paper({ data }) {
         internal: { type },
       } = link
       links.push(
-        <div className="paperlink">
+        <div className="paperlink" key={link.url}>
           <a href={link.url}>
               {`${type === "uri" ? link.url.slice(8, 60) : type}`}
           </a>

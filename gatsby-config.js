@@ -29,15 +29,6 @@ module.exports = {
         path: "./src/data/",
       },
     },
-    /*{
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        custom: {
-          families: ["Vollkorn, Reenie Beanie"],
-          urls: ["/fonts/fonts.css"],
-        },
-      },
-    },*/
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-simple-analytics",
     "gatsby-plugin-no-javascript",
