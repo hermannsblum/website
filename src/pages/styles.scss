@@ -2,18 +2,23 @@
 
 @font-face {
   font-family: 'Vollkorn';
-  src: url('/fonts/Vollkorn-Regular.ttf') format('truetype');
+  src: local('Vollkorn-Regular')
+       url('/fonts/Vollkorn-Regular.woff2') format('woff2')
+       url('/fonts/Vollkorn-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Nanum Pen';
-  src: url('/fonts/nanumpenscript-regular.woff2') format('woff2'),
+  src: local('nanumpenscript-regular')
+       url('/fonts/nanumpenscript-regular.woff2') format('woff2'),
        url('/fonts/nanumpenscript-regular.woff') format('woff'),
        url('/fonts/nanumpenscript-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 // If need, change your variables before importing Bulma

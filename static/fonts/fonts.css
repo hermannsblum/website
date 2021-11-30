@@ -1,8 +1,11 @@
 @font-face {
   font-family: 'Vollkorn';
-  src: url('Vollkorn-Regular.ttf') format('truetype');
+  src: local('Vollkorn-Regular')
+       url('Vollkorn-Regular.woff2') format('woff2')
+       url('Vollkorn-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,4 +15,5 @@
        url('nanumpenscript-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }

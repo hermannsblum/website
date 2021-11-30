@@ -28,6 +28,7 @@ export default function Layout({ children }) {
             ></span>
             <a
               className="navbar-item"
+              rel="noreferrer"
               href="https://boardgames.hermannblum.net/"
               target="_blank"
             >
@@ -108,6 +109,7 @@ export default function Layout({ children }) {
             <a
               className="icontext"
               href="https://github.com/hermannsblum"
+              rel="noreferrer"
               target="_blank"
             >
               hermannsblum
@@ -121,6 +123,7 @@ export default function Layout({ children }) {
             <a
               className="icontext"
               href="https://www.linkedin.com/in/hermann-bl/"
+              rel="noreferrer"
               target="_blank"
             >
               hermannsblum

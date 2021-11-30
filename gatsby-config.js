@@ -29,7 +29,7 @@ module.exports = {
         path: "./src/data/",
       },
     },
-    {
+    /*{
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
@@ -37,7 +37,7 @@ module.exports = {
           urls: ["/fonts/fonts.css"],
         },
       },
-    },
+    },*/
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-simple-analytics",
     "gatsby-plugin-no-javascript",
