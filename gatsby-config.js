@@ -31,6 +31,6 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-simple-analytics",
-    "gatsby-plugin-no-javascript",
+    //"gatsby-plugin-no-javascript",
   ],
 }
