@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'Vollkorn';
   src: local('Vollkorn-Regular')
-       url('/fonts/Vollkorn-Regular.woff2') format('woff2')
+       url('/fonts/Vollkorn-Regular-subset.woff2') format('woff2')
        url('/fonts/Vollkorn-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -13,7 +13,7 @@
 @font-face {
   font-family: 'Nanum Pen';
   src: local('nanumpenscript-regular')
-       url('/fonts/nanumpenscript-regular.woff2') format('woff2'),
+       url('/fonts/nanumpenscript-regular-subset.woff2') format('woff2'),
        url('/fonts/nanumpenscript-regular.woff') format('woff'),
        url('/fonts/nanumpenscript-regular.ttf') format('truetype');
   font-weight: normal;
