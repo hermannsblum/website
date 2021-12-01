@@ -144,6 +144,17 @@ export default function Layout({ children }) {
             <a href="http://www.freepik.com">0melapics / Freepik</a>
             &nbsp;for the robot decorations.
           </p>
+          <p>
+            This website has a{" "}
+            <a
+              href="https://www.websitecarbon.com/website/hermannblum-net/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              low carbon footprint
+            </a>{" "}
+            and is hosted on green energy.
+          </p>
         </div>
       </div>
     </>
