@@ -138,12 +138,14 @@ async function onCreateNode({
     // we always write over the scholar entry, but we save the children
     let existingChildren = paperNode ? paperNode.children : []
     // existing journal in case orcid does not have one
-    let existingJournal = paperNode ? paperNode.journal : null;
+    let existingJournal = paperNode ? paperNode.journal : null
     existingChildren = existingChildren.map(childId => getNode(childId))
     createNode({
       id: paperId,
       title: summary.title.title.value,
-      journal: node["journal-title"] ? node["journal-title"].value : existingJournal,
+      journal: node["journal-title"]
+        ? node["journal-title"].value
+        : existingJournal,
       creator: "orcid",
       date: {
         month: parseInt(summary["publication-date"].month.value),
@@ -165,6 +167,12 @@ async function onCreateNode({
     // paper node for relation
     paperNode = getNode(paperId)
     node["external-ids"]["external-id"].forEach(externalId => {
+      if (
+        !externalId["external-id-url"] ||
+        !externalId["external-id-url"].value
+      ) {
+        return
+      }
       const url = cleanUrl(externalId["external-id-url"].value)
       const paperLink = {
         id: createNodeId(url),
