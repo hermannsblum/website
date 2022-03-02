@@ -74,7 +74,8 @@ const search = query =>
   new Promise((resolve, reject) => {
     const requestOptions = {
       //url: encodeURI(googleScholarUrl + query),
-      url: "https://scholar.google.com/citations?user=2Pxx8QIAAAAJ&hl=en",
+      url:
+        "https://scholar.google.com/citations?user=2Pxx8QIAAAAJ&hl=en&view_op=list_works&sortby=pubdate",
       jar: true, // remember cookies for future use
       encoding: null,
     }
