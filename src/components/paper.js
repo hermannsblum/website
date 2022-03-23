@@ -1,5 +1,5 @@
 import React from "react"
-import ReactPlayer from "react-player/youtube"
+import ReactPlayer from "react-player/lazy"
 
 function youtube_parser(url) {
   var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/
@@ -28,11 +28,27 @@ export default function Paper({ data }) {
   let media_content = ""
   let links = []
   if (data.media) {
-    media_content = (
-      <figure className="image is-16by9">
-        <img src={data.media} loading="lazy" alt="paper figure"></img>
-      </figure>
-    )
+    if (data.media.endsWith("mov")) {
+      media_content = (
+        <figure className="image is-16by9">
+          <ReactPlayer
+            url={data.media}
+            light={true}
+            controls={true}
+            width="100%"
+            height="100%"
+            className="react-player"
+            config={{ file: { forceVideo: true } }}
+          />
+        </figure>
+      )
+    } else {
+      media_content = (
+        <figure className="image is-16by9">
+          <img src={data.media} loading="lazy" alt="paper figure"></img>
+        </figure>
+      )
+    }
   }
   data.children.map(link => {
     if (
