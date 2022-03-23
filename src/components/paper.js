@@ -56,11 +56,17 @@ export default function Paper({ data }) {
       const {
         internal: { type },
       } = link
+      let linkText = type
+      if (type === "uri") {
+        if (link.url.includes("github")) {
+          linkText = "code"
+        } else {
+          linkText = link.url.slice(8, 60)
+        }
+      }
       links.push(
         <div className="paperlink" key={link.url}>
-          <a href={link.url}>
-              {`${type === "uri" ? link.url.slice(8, 60) : type}`}
-          </a>
+          <a href={link.url}>{linkText}</a>
         </div>
       )
     }
@@ -79,13 +85,14 @@ export default function Paper({ data }) {
     </>
   )
   return (
-    <div className={"columns is-multiline" + (media_content ? " highlighted" : "")}>
+    <div
+      className={"columns is-multiline" + (media_content ? " highlighted" : "")}
+    >
       <div
         className={
           (media_content
             ? "pb-0 is-8 is-offset-2 is-hidden-widescreen"
-            : "is-2 is-offset-1") +
-          " papercomment column is-hidden-mobile"
+            : "is-2 is-offset-1") + " papercomment column is-hidden-mobile"
         }
         style={{ textAlign: "right" }}
       >
@@ -97,7 +104,9 @@ export default function Paper({ data }) {
         ""
       )}
       <div
-        className={"column is-full-mobile" + (media_content ? " is-offset-2" : "")}
+        className={
+          "column is-full-mobile" + (media_content ? " is-offset-2" : "")
+        }
       >
         {data.comment ? (
           <div
@@ -115,9 +124,15 @@ export default function Paper({ data }) {
         )}
         {paperinfo}
       </div>
-      {media_content ? <div className="media-content column">{media_content}</div> : ""}
+      {media_content ? (
+        <div className="media-content column">{media_content}</div>
+      ) : (
+        ""
+      )}
       <div
-        className={"column is-hidden-mobile" + (media_content ? " is-2" : " is-3")}
+        className={
+          "column is-hidden-mobile" + (media_content ? " is-2" : " is-3")
+        }
       ></div>
     </div>
   )
