@@ -49,7 +49,7 @@ const WorkPage = ({ data }) => {
   // overwrite paper data with any info from yaml
   const paperData = data.allPaper.nodes.reduce((result, paper) => {
     const correspondingYamlPaper = data.allPapersYaml.nodes.find(
-      yamlPaper => yamlPaper.title === paper.title
+      yamlPaper => yamlPaper.title.toLowerCase() === paper.title.toLowerCase()
     )
     if (correspondingYamlPaper) {
       if (!correspondingYamlPaper.ignore) {
