@@ -104,52 +104,23 @@ export default function Paper({ data }) {
     <div
       className={"columns is-multiline" + (media_content ? " highlighted" : "")}
     >
-      <div
-        className={
-          (media_content
-            ? "pb-0 is-8 is-offset-2 is-hidden-widescreen"
-            : "is-2 is-offset-1") + " papercomment column is-hidden-mobile"
-        }
-        style={{ textAlign: "right" }}
-      >
+      <div className="is-2 is-offset-1-desktop papercomment column is-hidden-mobile">
         {`${data.comment || ""}`}
       </div>
-      {media_content ? (
-        <div className="column is-2 is-hidden-widescreen is-hidden-mobile"></div>
-      ) : (
-        ""
-      )}
-      <div
-        className={
-          "column is-full-mobile" + (media_content ? " is-offset-2" : "")
-        }
-      >
+      <div className="column is-full-mobile">
+        {paperinfo}
         {data.comment ? (
-          <div
-            className={
-              "papercomment" +
-              (media_content
-                ? " is-hidden-tablet-only is-hidden-desktop-only"
-                : " is-hidden-tablet")
-            }
-          >
-            {data.comment}
-          </div>
+          <div className="papercomment is-hidden-tablet">{data.comment}</div>
         ) : (
           ""
         )}
-        {paperinfo}
       </div>
       {media_content ? (
         <div className="media-content column">{media_content}</div>
       ) : (
         ""
       )}
-      <div
-        className={
-          "column is-hidden-mobile" + (media_content ? " is-2" : " is-3")
-        }
-      ></div>
+      <div className="column is-hidden-mobile is-3-desktop is-2-tablet"></div>
     </div>
   )
 }

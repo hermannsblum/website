@@ -12,7 +12,7 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
       <div className="columns">
-        <div className="column is-6 is-offset-3 is-desktop">
+        <div className="column is-8-tablet is-6-desktop is-offset-3-desktop is-offset-2-tablet is-desktop">
           <nav
             className="mini-navbar border"
             role="navigation"
@@ -40,7 +40,7 @@ export default function Layout({ children }) {
           </nav>
         </div>
       </div>
-      <div className="columns is-mobile">
+      <div className="columns">
         <div
           className="decoration"
           style={{
@@ -77,30 +77,34 @@ export default function Layout({ children }) {
         >
           <img src="/robo1.svg" alt="" loading="lazy"></img>
         </div>
-        <div
-          className="column is-2-tablet is-offset-3-tablet is-3-mobile"
-          style={{
-            maxHeight: "10rem",
-            overflow: "hidden",
-          }}
-        >
-          <img src="/profile.png" alt="profile picture"></img>
-        </div>
-        <div className="column is-4-tablet is-9-mobile is-size-7">
-          <p>
-            Hi, I'm Hermann. I work as a PhD Student at the Autonomous Systems
-            Lab of ETH Z&uuml;rich.
-          </p>
-          <p className="mt-2">
-            My research focuses on robotic perception. I strive to build robots
-            that can understand their environment semantically and
-            geometrically, in order to perform manipulation and other safety
-            critical tasks in proximity to humans.
-          </p>
+        <div className="column is-6-desktop is-8-tablet is-offset-3-desktop is-offset-2-tablet is-size-7">
+          <div className="columns is-mobile">
+            <div
+              className="column is-3"
+              style={{
+                maxHeight: "10rem",
+                overflow: "hidden",
+              }}
+            >
+              <img src="/profile.png" alt="profile picture"></img>
+            </div>
+            <div className="column">
+              <p>
+                Hi, I'm Hermann. I work as a PhD Student at the Autonomous
+                Systems Lab of ETH Z&uuml;rich.
+              </p>
+              <p className="mt-2">
+                My research focuses on robotic perception. I strive to build
+                robots that can understand their environment semantically and
+                geometrically, in order to perform manipulation and other safety
+                critical tasks in proximity to humans.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="columns">
-        <div className="column is-7 is-offset-3 is-size-7">
+        <div className="column is-6-desktop is-8-tablet is-offset-3-desktop is-offset-2-tablet is-size-7">
           <p>
             <span
               className="icon pr-2"
