@@ -78,7 +78,7 @@ body {
 }
 
 a {
-  color: $text;
+  color: $link;
   text-decoration: underline;
 }
 
@@ -95,6 +95,9 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  background: url('/box-arrow-up-right.svg') no-repeat 100% 35%;
+  background-size: auto 60%;
+  padding-right: 1.2em;
 }
 
 @media (max-width: 399px) {
