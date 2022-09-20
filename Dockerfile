@@ -1,5 +1,5 @@
-FROM node:12-buster as build
-RUN yarn global add gatsby-cli@2.12
+FROM node:18-buster as build
+RUN yarn global add gatsby-cli@4
 WORKDIR /app
 ADD . ./
 RUN yarn install
