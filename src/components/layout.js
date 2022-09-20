@@ -105,7 +105,7 @@ export default function Layout({ children }) {
       </div>
       <div className="columns">
         <div className="column is-6-desktop is-8-tablet is-offset-3-desktop is-offset-2-tablet is-size-7">
-          <p>
+          <span>
             <span
               className="icon pr-2"
               dangerouslySetInnerHTML={{ __html: icons.github }}
@@ -118,8 +118,8 @@ export default function Layout({ children }) {
             >
               hermannsblum
             </a>
-          </p>
-          <p>
+          </span>
+          <span>
             <span
               className="icon pr-2"
               dangerouslySetInnerHTML={{ __html: icons.linkedin }}
@@ -132,7 +132,21 @@ export default function Layout({ children }) {
             >
               hermannsblum
             </a>
-          </p>
+          </span>
+          <span>
+            <span
+              className="icon pr-2"
+              dangerouslySetInnerHTML={{ __html: icons.mastodon }}
+            ></span>
+            <a
+              className="icontext"
+              href="https://scholar.social/@hermannblum"
+              rel="noreferrer"
+              target="_blank"
+            >
+              @hermannblum@scholar.social
+            </a>
+          </span>
           <p className="mt-2">
             Visit the <a href="https://asl.ethz.ch">ASL website</a> for latest
             updates from my colleagues and supervisors.
