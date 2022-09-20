@@ -29,16 +29,16 @@ async function onCreateNode({
       const cutPosition = node.journal.indexOf("arXiv:") + 6
       arxiv = node.journal.slice(cutPosition, cutPosition + 10)
     }
+    // save the children before overwrite
+    let existingChildren = paperNode ? paperNode.children : []
+    existingChildren = existingChildren.map(childId => getNode(childId))
     if (!paperNode || paperNode.creator === "google-scholar") {
-      // we always write over the scholar entry, but we save the children
-      let existingChildren = paperNode ? paperNode.children : []
-      existingChildren = existingChildren.map(childId => getNode(childId))
-
       paperNode = {
         id: paperId,
         title: node.title,
         creator: "google-scholar-profile",
         journal: journal,
+        authors: node.authors,
         date: {
           year: parseInt(node.year),
           // parse month from arxiv if possible
@@ -50,39 +50,41 @@ async function onCreateNode({
           contentDigest: createContentDigest(node),
         },
       }
-      createNode(paperNode)
-      existingChildren.forEach(child => {
-        delete child.internal.owner
-        createNode(child)
-        createParentChildLink({ parent: paperNode, child: child })
-      })
-      if (
-        arxiv &&
-        existingChildren.filter(child => child.internal.type === "arxiv")
-          .length === 0
-      ) {
-        const paperLink = {
-          id: createNodeId(arxiv),
-          url: `https://arxiv.org/abs/${arxiv}`,
-          internal: {
-            type: "arxiv",
-            content: JSON.stringify(arxiv),
-            contentDigest: createContentDigest(arxiv),
-          },
-        }
-        createNode(paperLink)
-        createParentChildLink({ parent: paperNode, child: paperLink })
-      }
-    } else if (paperNode && !paperNode.journal) {
-      paperNode.journal = journal
+    } else {  // ORCID
+      // add journal and author info
+      paperNode.journal = paperNode.journal || journal
+      paperNode.authors = node.authors
       delete paperNode.internal.owner
-      createNode(paperNode)
     }
-    // overwrite authors in any case
-    paperNode = getNode(paperId)
-    delete paperNode.internal.owner
-    paperNode.authors = node.authors
     createNode(paperNode)
+    existingChildren.forEach(child => {
+      delete child.internal.owner
+      createNode(child)
+      createParentChildLink({
+        parent: paperNode,
+        child: child,
+      })
+    })
+    if (
+      arxiv &&
+      existingChildren.filter(child => child.internal.type === "arxiv")
+        .length === 0
+    ) {
+      const paperLink = {
+        id: createNodeId(arxiv),
+        url: `https://arxiv.org/abs/${arxiv}`,
+        internal: {
+          type: "arxiv",
+          content: JSON.stringify(arxiv),
+          contentDigest: createContentDigest(arxiv),
+        },
+      }
+      createNode(paperLink)
+      createParentChildLink({
+        parent: paperNode,
+        child: paperLink,
+      })
+    }
   } else if (node.internal.type === "GoogleScholar") {
     // check if paper contains correct author
     if (
@@ -137,15 +139,18 @@ async function onCreateNode({
     let paperNode = getNode(paperId)
     // we always write over the scholar entry, but we save the children
     let existingChildren = paperNode ? paperNode.children : []
+    existingChildren = existingChildren.map(childId => getNode(childId))
     // existing journal in case orcid does not have one
     let existingJournal = paperNode ? paperNode.journal : null
-    existingChildren = existingChildren.map(childId => getNode(childId))
+    // existing authors, because orcid does not provide them
+    let existingAuthors = paperNode ? paperNode.authors : null
     createNode({
       id: paperId,
       title: summary.title.title.value,
       journal: node["journal-title"]
         ? node["journal-title"].value
         : existingJournal,
+      authors: existingAuthors,
       creator: "orcid",
       date: {
         month: parseInt(summary["publication-date"].month.value),
