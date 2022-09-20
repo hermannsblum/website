@@ -77,7 +77,8 @@ export default function Paper({ data }) {
         if (link.url.includes("github")) {
           linkText = "code"
         } else {
-          linkText = link.url.slice(8, 60)
+          const url = new URL(link.url)
+          linkText = url.hostname
         }
       }
       links.push(
