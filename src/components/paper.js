@@ -17,6 +17,13 @@ export default function Paper({ data }) {
       data.journal.includes("International Conference on Intelligent Robots")
     ) {
       conference_summary = `IROS ${data.date.year}`
+    } else if (
+      data.journal.includes("ICRA") ||
+      data.journal.includes(
+        "International Conference on Robotics and Automation"
+      )
+    ) {
+      conference_summary = `ICRA ${data.date.year}`
     } else if (data.journal.includes("ISARC")) {
       conference_summary = `ISARC ${data.date.year}`
     } else if (data.journal.includes(`${data.date.year}`)) {

@@ -25,7 +25,7 @@
   authors: G Di Biase*, H Blum*, R Siegwart, C Cadena
 - title: Self-Improving Semantic Perception for Indoor Localisation
   comment: Our new concept for robots that learn on their own
-- title: Continual Learning of Semantic Segmentation using Complementary 2D-3D Data Representations
+- title: Continual Adaptation of Semantic Segmentation using Complementary 2D-3D Data Representations
   comment: 🏆 Best Paper Runner-up at the 2021 NeurIPS Robot Learning Workshop
 - title: "SegmentMeIfYouCan: A Benchmark for Anomaly Segmentation"
   authors: R Chan*, K Lis*, S Uhlemeyer*, H Blum*, S Honari, R Siegwart, P Fua, M Salzmann, M Rottmann
@@ -35,7 +35,7 @@
   authors: M Milde, H Blum, A Dietmüller, D Sumislawska, J Conradt, G Indiveri, Y Sandamirskaya
 - title: Embodied Active Domain Adaptation for Semantic Segmentation via Informative Path Planning
   comment: integrates our NeurIPS workshop work into a fully autonomous press-start-and-leave domain adaptation
-- title: "SL Sensor: An Open-Source, ROS-Based, Real-Time Structured Light Sensor for High Accuracy Construction Robotic Applications"
+- title: "SL Sensor: An open-source, real-time and robot operating system-based structured light sensor for high accuracy construction robotic applications"
   comment: mm-precise RGBD pointclouds
   media: https://user-images.githubusercontent.com/19413243/140678239-58d45401-ebac-4b78-907e-b910440c43c0.mov
 
