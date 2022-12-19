@@ -90,8 +90,9 @@ export default function Layout({ children }) {
             </div>
             <div className="column">
               <p>
-                Hi, I'm Hermann. I work as a PhD Student at the Autonomous
-                Systems Lab of ETH Z&uuml;rich.
+                Hi, I'm Hermann. I work as a PostDoc in the Computer Vision and
+                Geometry Lab of ETH Z&uuml;rich. For my PhD I was part of the
+                Autonomous Systems Lab at ETH Z&uuml;rich.
               </p>
               <p className="mt-2">
                 My research focuses on robotic perception. I strive to build
