@@ -149,8 +149,8 @@ export default function Layout({ children }) {
             </a>
           </span>
           <p className="mt-2">
-            Visit the <a href="https://asl.ethz.ch">ASL website</a> for latest
-            updates from my colleagues and supervisors.
+            Visit the <a href="https://cvg.ethz.ch">CVG website</a> for
+            available student projects and latest updates from my colleagues.
           </p>
           <p className="mt-2">Here are my recent works:</p>
         </div>
