@@ -112,8 +112,7 @@ a {
 
 .papercomment {
   font-family: "Nanum Pen";
-  display: flex;
-  align-items: center;
+  @extend .has-text-right;
 }
 
 .decoration {
