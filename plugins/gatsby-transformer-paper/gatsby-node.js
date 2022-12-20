@@ -50,7 +50,8 @@ async function onCreateNode({
           contentDigest: createContentDigest(node),
         },
       }
-    } else {  // ORCID
+    } else {
+      // ORCID
       // add journal and author info
       paperNode.journal = paperNode.journal || journal
       paperNode.authors = node.authors
@@ -144,6 +145,12 @@ async function onCreateNode({
     let existingJournal = paperNode ? paperNode.journal : null
     // existing authors, because orcid does not provide them
     let existingAuthors = paperNode ? paperNode.authors : null
+    // sometimes the month is not set
+    const month = summary["publication-date"].month
+      ? parseInt(summary["publication-date"].month.value)
+      : paperNode
+      ? paperNode.date.month
+      : 13
     createNode({
       id: paperId,
       title: summary.title.title.value,
@@ -153,7 +160,7 @@ async function onCreateNode({
       authors: existingAuthors,
       creator: "orcid",
       date: {
-        month: parseInt(summary["publication-date"].month.value),
+        month,
         year: parseInt(summary["publication-date"].year.value),
       },
       internal: {
