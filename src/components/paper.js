@@ -112,7 +112,7 @@ export default function Paper({ data }) {
     <div
       className={"columns is-multiline" + (media_content ? " highlighted" : "")}
     >
-      <div className="is-2 is-offset-1-desktop papercomment column is-hidden-mobile">
+      <div className="is-2 is-offset-1-desktop papercomment column is-hidden-mobile has-text-right">
         {`${data.comment || ""}`}
       </div>
       <div className="column is-full-mobile">
