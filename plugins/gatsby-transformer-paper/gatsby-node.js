@@ -19,7 +19,9 @@ async function onCreateNode({
 }) {
   const { createNode, createParentChildLink, createNodeField } = actions
   if (node.internal.type === "GoogleScholarProfile") {
-    const paperId = createNodeId(node.title.toLowerCase().trim())
+    const paperId = createNodeId(
+      node.title.toLowerCase().trim().replace(/\s+/g, " ")
+    )
     let paperNode = getNode(paperId)
     // some processing for axiv
     let journal = node.journal
@@ -95,7 +97,9 @@ async function onCreateNode({
     ) {
       return
     }
-    const paperId = createNodeId(node.title.toLowerCase().trim())
+    const paperId = createNodeId(
+      node.title.toLowerCase().trim().replace(/\s+/g, " ")
+    )
     let paperNode = getNode(paperId)
     if (!paperNode) {
       // avoid overwriting
@@ -136,7 +140,9 @@ async function onCreateNode({
     })
   } else if (node.internal.type === "OrcidWork") {
     const summary = node["work-summary"][0]
-    const paperId = createNodeId(summary.title.title.value.toLowerCase().trim())
+    const paperId = createNodeId(
+      summary.title.title.value.toLowerCase().trim().replace(/\s+/g, " ")
+    )
     let paperNode = getNode(paperId)
     // we always write over the scholar entry, but we save the children
     let existingChildren = paperNode ? paperNode.children : []
