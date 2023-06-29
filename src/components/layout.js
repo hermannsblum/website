@@ -141,11 +141,11 @@ export default function Layout({ children }) {
             ></span>
             <a
               className="icontext"
-              href="https://scholar.social/@hermannblum"
+              href="https://sigmoid.social/@hermann"
               rel="noreferrer"
               target="_blank"
             >
-              @hermannblum@scholar.social
+              @hermann@sigmoid.social
             </a>
           </span>
           <p className="mt-2">
