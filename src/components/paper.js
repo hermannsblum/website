@@ -81,8 +81,10 @@ export default function Paper({ data }) {
       } = link
       let linkText = type
       if (type === "uri") {
-        if (link.url.includes("github")) {
+        if (link.url.includes("github.com")) {
           linkText = "code"
+        } else if (link.url.includes("github.io") || link.url.includes("hermannblum.net")) {
+          linkText = "website"
         } else {
           const url = new URL(link.url)
           linkText = url.hostname
