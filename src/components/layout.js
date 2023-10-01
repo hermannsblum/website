@@ -142,7 +142,7 @@ export default function Layout({ children }) {
             <a
               className="icontext"
               href="https://sigmoid.social/@hermann"
-              rel="noreferrer"
+              rel="me"
               target="_blank"
             >
               @hermann@sigmoid.social
@@ -177,5 +177,5 @@ export default function Layout({ children }) {
         </div>
       </div>
     </>
-  )
+  );
 }
