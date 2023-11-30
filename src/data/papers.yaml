@@ -46,4 +46,8 @@
   journal: ICRA WS
 - title: "See Yourself in Others: Attending Multiple Tasks for Own Failure Detection"
   comment: 🏆 Best Paper at IROS 2023 WS 'Frontier Vision & Learning Techniques'
+- title: "LabelMaker: Automatic Semantic Label Generation from RGB-D Trajectories"
+  authors: S Weder*, H Blum*, F Engelmann, M Pollefeys
+  journal: 3DV 2024
+  comment: fully automatic labels on the quality level of ScanNet
 
