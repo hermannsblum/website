@@ -95,6 +95,12 @@ export default function Layout({ children }) {
                 Autonomous Systems Lab at ETH Z&uuml;rich.
               </p>
               <p className="mt-2">
+                From April 2024 I am starting as assistant professor at the
+                <a href="https://lamarr-institute.org">Lamarr Institute / Uni Bonn</a>.
+                I am hiring from automn 2024 onwards. Please reach out if you are interested
+                to be part of my new lab on robotic perception and learning.
+              </p>
+              <p className="mt-2">
                 My research focuses on robotic perception. I strive to build
                 robots that can understand their environment semantically and
                 geometrically, in order to perform manipulation and other safety
