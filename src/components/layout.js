@@ -90,13 +90,14 @@ export default function Layout({ children }) {
             </div>
             <div className="column">
               <p>
-                Hi, I'm Hermann. I work as a PostDoc in the Computer Vision and
+                Hi, I'm Hermann, a junior professor at the
+                <a href="https://lamarr-institute.org">Lamarr Institute / Uni Bonn</a>.
+                Previously, I worked as a PostDoc in the Computer Vision and
                 Geometry Lab of ETH Z&uuml;rich. For my PhD I was part of the
                 Autonomous Systems Lab at ETH Z&uuml;rich.
               </p>
               <p className="mt-2">
-                From April 2024 I am starting as assistant professor at the
-                <a href="https://lamarr-institute.org">Lamarr Institute / Uni Bonn</a>.
+                I started as assistant professor in April 2024 and
                 I am hiring from automn 2024 onwards. Please reach out if you are interested
                 to be part of my new lab on robotic perception and learning.
               </p>
