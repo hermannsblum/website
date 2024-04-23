@@ -90,16 +90,13 @@ export default function Layout({ children }) {
             </div>
             <div className="column">
               <p>
-                Hi, I'm Hermann, a junior professor at the
-                <a href="https://lamarr-institute.org">Lamarr Institute / Uni Bonn</a>.
-                Previously, I worked as a PostDoc in the Computer Vision and
+                Hi, I'm Hermann, a junior professor at the&nbsp;
+                <a href="https://lamarr-institute.org">
+                  Lamarr Institute / Uni Bonn
+                </a>
+                . Previously, I worked as a PostDoc in the Computer Vision and
                 Geometry Lab of ETH Z&uuml;rich. For my PhD I was part of the
                 Autonomous Systems Lab at ETH Z&uuml;rich.
-              </p>
-              <p className="mt-2">
-                I started as assistant professor in April 2024 and
-                I am hiring from automn 2024 onwards. Please reach out if you are interested
-                to be part of my new lab on robotic perception and learning.
               </p>
               <p className="mt-2">
                 My research focuses on robotic perception. I strive to build
@@ -155,10 +152,15 @@ export default function Layout({ children }) {
               @hermann@sigmoid.social
             </a>
           </span>
-          <p className="mt-2">
+          {/* <p className="mt-2">
             Visit the <a href="https://cvg.ethz.ch">CVG website</a> for
             available student projects and latest updates from my colleagues.
-          </p>
+          </p> */}
+          <div className="notification is-warning mt-2">
+            I have open PhD positions in my new lab from automn 2024 onwards.
+            Please reach out if you are interested to be part of my new lab on
+            robotic perception and learning.
+          </div>
           <p className="mt-2">Here are my recent works:</p>
         </div>
       </div>
@@ -184,5 +186,5 @@ export default function Layout({ children }) {
         </div>
       </div>
     </>
-  );
+  )
 }
