@@ -157,7 +157,7 @@ export default function Layout({ children }) {
             available student projects and latest updates from my colleagues.
           </p> */}
           <div className="notification is-warning mt-2">
-            I have open PhD positions in my new lab from automn 2024 onwards.
+            I have open PhD positions in my new lab from autumn 2024 onwards.
             Please reach out if you are interested to be part of my new lab on
             robotic perception and learning.
           </div>
