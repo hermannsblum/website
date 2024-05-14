@@ -91,7 +91,7 @@ export default function Layout({ children }) {
             <div className="column">
               <p>
                 Hi, I'm Hermann, a junior professor at the&nbsp;
-                <a href="https://lamarr-institute.org">
+                <a href="https://lamarr-institute.org" target="blank">
                   Lamarr Institute / Uni Bonn
                 </a>
                 . Previously, I worked as a PostDoc in the Computer Vision and
@@ -103,6 +103,9 @@ export default function Layout({ children }) {
                 robots that can understand their environment semantically and
                 geometrically, in order to perform manipulation and other safety
                 critical tasks in proximity to humans.
+              </p>
+              <p className="mt-2">
+                Here is my <a href="https://rpl.uni-bonn.de/" target="blank">lab website</a>.
               </p>
             </div>
           </div>
