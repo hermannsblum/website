@@ -40,6 +40,8 @@
   media: https://user-images.githubusercontent.com/19413243/140678239-58d45401-ebac-4b78-907e-b910440c43c0.mov
 - title: Method for Setting More Precisely a Position and/or Orientation of a Device Head
   ignore: true
+- title: Method for localizing a mobile construction robot on a construction site using semantic segmentation, construction robot system and computer program product
+  ignore: true
 - title: Self-improving, Open-World Robotic Scene Understanding
   comment: my PhD thesis
 - title: "Interactive OAISYS: A photorealistic terrain simulation for robotics research"
