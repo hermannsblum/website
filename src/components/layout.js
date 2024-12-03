@@ -105,7 +105,11 @@ export default function Layout({ children }) {
                 critical tasks in proximity to humans.
               </p>
               <p className="mt-2">
-                Here is my <a href="https://rpl.uni-bonn.de/" target="blank">lab website</a>.
+                Here is my{" "}
+                <a href="https://rpl.uni-bonn.de/" target="blank">
+                  lab website
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -153,6 +157,20 @@ export default function Layout({ children }) {
               target="_blank"
             >
               @hermann@sigmoid.social
+            </a>
+          </span>
+          <span>
+            <span
+              className="icon pr-2"
+              dangerouslySetInnerHTML={{ __html: icons.bsky }}
+            ></span>
+            <a
+              className="icontext"
+              href="https://bsky.app/profile/hermannblum.bsky.social"
+              rel="me"
+              target="_blank"
+            >
+              @hermannblum.bsky.social
             </a>
           </span>
           {/* <p className="mt-2">
