@@ -55,4 +55,6 @@
 - title: "Spot-Compose: A Framework for Open-Vocabulary Object Retrieval and Drawer Manipulation in Point Clouds"
   journal: ICRA WS
   comment: 🏆 Best Paper at ICRA 24 Mobile Manipulation Workshop
+- title: "OptXR: Optimization of Maintenance Processes with Extended Reality and Digital Twins"
+  ignore: true
 
