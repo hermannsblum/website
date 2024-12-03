@@ -177,11 +177,11 @@ export default function Layout({ children }) {
             Visit the <a href="https://cvg.ethz.ch">CVG website</a> for
             available student projects and latest updates from my colleagues.
           </p> */}
-          <div className="notification is-warning mt-2">
+          {/* <div className="notification is-warning mt-2">
             I have open PhD positions in my new lab from autumn 2024 onwards.
             Please reach out if you are interested to be part of my new lab on
             robotic perception and learning.
-          </div>
+          </div> */}
           <p className="mt-2">Here are my recent works:</p>
         </div>
       </div>
