@@ -99,10 +99,11 @@ export default function Layout({ children }) {
                 Autonomous Systems Lab at ETH Z&uuml;rich.
               </p>
               <p className="mt-2">
-                My research focuses on robotic perception. I strive to build
-                robots that can understand their environment semantically and
-                geometrically, in order to perform manipulation and other safety
-                critical tasks in proximity to humans.
+                My research focuses on embodied perception. I strive to build
+                models and methods to understand an agent's environment semantically and
+                geometrically. Recently, I am most interested in interactions with the environment
+                for applications such as robotic manipulation, video understanding, 
+                and mixed-reality.
               </p>
               <p className="mt-2">
                 Here is my{" "}
