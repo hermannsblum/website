@@ -29,7 +29,7 @@ export default function Layout({ children }) {
             <a
               className="navbar-item"
               rel="noreferrer"
-              href="https://boardgames.hermannblum.net/"
+              href="https://hermannsblum.github.io/gameschallenge/"
               target="_blank"
             >
               Boardgames
@@ -100,10 +100,10 @@ export default function Layout({ children }) {
               </p>
               <p className="mt-2">
                 My research focuses on embodied perception. I strive to build
-                models and methods to understand an agent's environment semantically and
-                geometrically. Recently, I am most interested in interactions with the environment
-                for applications such as robotic manipulation, video understanding, 
-                and mixed-reality.
+                models and methods to understand an agent's environment
+                semantically and geometrically. Recently, I am most interested
+                in interactions with the environment for applications such as
+                robotic manipulation, video understanding, and mixed-reality.
               </p>
               <p className="mt-2">
                 Here is my{" "}
@@ -129,7 +129,7 @@ export default function Layout({ children }) {
               rel="noreferrer"
               target="_blank"
             >
-              hermannsblum
+              github
             </a>
           </span>
           <span>
@@ -143,7 +143,7 @@ export default function Layout({ children }) {
               rel="noreferrer"
               target="_blank"
             >
-              hermannsblum
+              linkedin
             </a>
           </span>
           <span>
@@ -157,7 +157,7 @@ export default function Layout({ children }) {
               rel="me"
               target="_blank"
             >
-              @hermann@sigmoid.social
+              mastodon
             </a>
           </span>
           <span>
@@ -171,7 +171,7 @@ export default function Layout({ children }) {
               rel="me"
               target="_blank"
             >
-              @hermannblum.bsky.social
+              bluesky
             </a>
           </span>
           {/* <p className="mt-2">
